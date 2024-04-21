@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Cart Quantity
+    </title>
+    <style>
+    </style>
+  </head>
+  <body>
+    <button onclick="
+      console.log(`Cart quantity: ${cartQuantity}`);
+    ">
+      Show Quantity
+    </button>
+
+    <button onclick="
+      updateCartQuantity(true, 1);
+    ">
+      Add to Cart
+    </button>
+
+    <button onclick="
+      updateCartQuantity(true, 2);
+    ">
+      +2
+    </button>
+
+    <button onclick="
+      updateCartQuantity(true, 3);
+    ">
+      +3
+    </button>
+
+    <button onclick="
+      updateCartQuantity(true, 4);
+    ">
+      +4
+    </button>
+
+    <button onclick="
+      updateCartQuantity(true, 5);
+    ">
+      +5
+    </button>
+
+    <button onclick="
+      updateCartQuantity(false, 1);
+    ">
+      Remove from cart
+    </button>
+
+    <button onclick="
+      updateCartQuantity(false, 2);
+    ">
+      -2
+    </button>
+
+    <button onclick="
+      updateCartQuantity(false, 3);
+    ">
+      -3
+    </button>
+
+    <button onclick="
+      cartQuantity = 0;
+      console.log('Cart was reset.');
+      console.log(`Cart quantity: ${cartQuantity}`);
+    ">
+      Reset Cart
+    </button>
+
+    <button onclick="
+      console.clear();
+    ">
+      Clear Console
+    </button>
+
+    <script>
+      let cartQuantity = 0;
+
+      function updateCartQuantity(isAddToCart, quantity) {
+
+        const allowedCartQuantity = 10;
+
+        if (isAddToCart === true) {
+
+          if (cartQuantity + quantity <= allowedCartQuantity) {
+            cartQuantity += quantity;
+            console.log(`Cart quantity: ${cartQuantity}`);
+          } else {
+            alert('The cart is full');
+            return;
+          }
+
+        } else if(isAddToCart === false) {
+
+          if (cartQuantity - quantity >= 0) {
+            cartQuantity -= quantity;
+            console.log(`Cart quantity: ${cartQuantity}`);
+          } else {
+            alert('Not enough items in the cart');
+            return;
+          }
+
+        }
+
+      }
+      
+    </script>
+  </body>
+</html>

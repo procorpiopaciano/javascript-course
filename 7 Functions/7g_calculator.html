@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Calculator
+    </title>
+    <style>
+    </style>
+  </head>
+  <body>
+
+    <p>
+      Calculator
+    </p>
+
+    <p>
+      <button onclick="
+        updateCalculation(this.textContent);
+      ">
+        1
+      </button>
+
+      <button onclick="
+        updateCalculation(this.textContent);
+      ">
+        2
+      </button>
+
+      <button onclick="
+        updateCalculation(this.textContent);
+      ">
+        3
+      </button>
+
+      <button onclick="
+        updateCalculation(this.textContent);
+      ">
+        +
+      </button>
+    </p>
+
+    <p>
+      <button onclick="
+        updateCalculation(this.textContent);
+      ">
+        4
+      </button>
+
+      <button onclick="
+        updateCalculation(this.textContent);
+      ">
+        5
+      </button>
+
+      <button onclick="
+        updateCalculation(this.textContent);
+      ">
+        6
+      </button>
+
+      <button onclick="
+        updateCalculation(this.textContent);
+      ">
+        -
+      </button>
+    </p>
+
+    <p>
+      <button onclick="
+        updateCalculation(this.textContent);
+      ">
+        7
+      </button>
+
+      <button onclick="
+        updateCalculation(this.textContent);
+      ">
+        8
+      </button>
+
+      <button onclick="
+        updateCalculation(this.textContent);
+      ">
+        9
+      </button>
+
+      <button onclick="
+        updateCalculation(this.textContent);
+      ">
+        *
+      </button>
+    </p>
+
+    <p>
+      <button onclick="
+        updateCalculation(this.textContent);
+      ">
+        0
+      </button>
+
+      <button onclick="
+        updateCalculation(this.textContent);
+      ">
+        .
+      </button>
+
+      <button onclick="
+        calculation = eval(calculation);
+        console.log(calculation);
+      ">
+        =
+      </button>
+
+      <button onclick="
+        updateCalculation(this.textContent);
+      ">
+        /
+      </button>
+    </p>
+
+    <button onclick="
+      calculation = '';
+      console.clear();
+      console.log('Cleared.');
+    ">
+      Clear
+    </button>
+    
+    <script>
+      let calculation = '';
+
+      function updateCalculation(value) {
+        calculation += value.trim();
+        console.log(calculation);
+      }
+
+    </script>
+  </body>
+</html>
