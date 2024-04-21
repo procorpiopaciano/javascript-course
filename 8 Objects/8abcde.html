@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Objects
+    </title>
+    <style>
+    </style>
+  </head>
+  <body>
+    <script>
+      const product1 = {
+        name: 'basketball',
+        price: 2095,
+        ['delivery-time']: '3 days'
+      };
+
+      console.log(product1);
+
+      product1.price += 500;
+
+      console.log(product1);
+
+      const product2 = {
+        name: 'paddle',
+        price: 2594,
+        ['delivery-time']: '3 days'
+      };
+
+      const lessExpensiveProduct = comparePrice(product1, product2);
+
+      if(lessExpensiveProduct) {
+        console.log(`${lessExpensiveProduct.name} is less expensive.`);
+      } else {
+        console.log('Both products have same prices');
+      }
+
+      console.log(isSameProduct(product1, product2));
+      const product3 = product2;
+      console.log(isSameProduct(product3, product2));
+
+      function comparePrice(product1, product2) {
+        if(product1.price < product2.price) {
+          return product1;
+
+        } else if(product2.price < product1.price) {
+          return product2;
+
+        } else {
+          return null;
+        }
+      }
+
+      function isSameProduct(product1, product2) {
+        if(product1.name = product2.name && product1.price === product2.price) {
+          return true;
+
+        } else {
+          return false;
+        }
+      }
+
+    </script>
+  </body>
+</html>
