@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      DOM
+    </title>
+  </head>
+  <body>
+    <input class="js-input" type="text" placeholder="Type something">
+    <p class="js-output"></p>
+    <input class="a" type="text" placeholder="Type something" onkeydown="clearInput(event);">
+
+    <button onclick="btnClick();">
+      one
+    </button>
+    <button onclick="btnClick();">
+      two
+    </button>
+    
+    <script>
+      const tbInput = document.querySelector('.js-input');
+      const pOutput = document.querySelector('.js-output');
+
+      //More compact addEventListener
+      tbInput.addEventListener("keyup", function() {
+        pOutput.innerHTML = tbInput.value;
+      });
+      //
+
+      //Other addEventListener
+      tbInput.addEventListener("keydown", clearInput);
+
+      function clearInput(event) {
+        if(event.key === 'Enter') {
+          tbInput.value = '';
+        }
+      }
+      //
+
+      function btnClick() {
+        alert(document.activeElement.innerText);
+      }
+      
+    </script>
+
+  </body>
+</html>

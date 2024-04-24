@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      DOM
+    </title>
+    <style>
+    </style>
+  </head>
+  <body>
+    <button onclick="chosenButton('heads');">
+      heads
+    </button>
+    <button onclick="chosenButton('tails');">
+      tails
+    </button>
+    <p class="js-choice"></p>
+    <script>
+
+      function chosenButton(buttonClicked) {
+        document.querySelector('.js-choice').innerHTML = `You chose: ${buttonClicked}`;
+      }
+      
+    </script>
+  </body>
+</html>

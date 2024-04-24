@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      DOM
+    </title>
+  </head>
+  <body>
+    <input class="js-cost-input" placeholder="Cost of order" onkeydown="
+      handleCostKeyDown(event);
+    ">
+    <button onclick="
+      calculateTotal();
+      ">
+      Calculate
+    </button>
+
+    <p class="js-total-cost">
+    </p>
+
+    <script>
+      function handleCostKeyDown(event) {
+        if(event.key === 'Enter') {
+          calculateTotal();
+        }
+      }
+
+      function calculateTotal() {
+
+        const inputElement = document.querySelector('.js-cost-input');
+        if(inputElement.value.length === 0) {
+          document.querySelector('.js-total-cost').innerHTML = 'Enter cost of order';
+          return;
+        }
+        let cost = numbersWithDecimalHandler(Number(inputElement.value), '*');
+
+        if(cost < numbersWithDecimalHandler(40, '*')) {
+          cost = numbersWithDecimalHandler(cost + numbersWithDecimalHandler(10, '*'), '/');
+        }
+
+        document.querySelector('.js-total-cost').innerHTML = `${cost ? '$'+ cost.toFixed(2) : 'Invalid Input'}`; //ternary operator
+
+        inputElement.value = '';
+      }
+
+      function numbersWithDecimalHandler(numberToConvert, operator) { //but it is not exact if it has 3 or more decimal
+        if(operator === '*') {
+          return numberToConvert * 100;
+
+        } else if(operator === '/') {
+          return numberToConvert / 100;
+        }
+      }
+    </script>
+
+  </body>
+</html>
