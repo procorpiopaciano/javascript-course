@@ -1,0 +1,25 @@
+button {
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  background-color: rgb(230, 230, 230);
+  color: black;
+  margin-right: 10px;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+button:active {
+  opacity: 0.6;
+}
+
+.is-toggled {
+  background-color: black;
+  color: white;
+}
