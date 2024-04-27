@@ -1,4 +1,6 @@
-let calculation = localStorage.getItem('calculation') || '';
+const blankFormula = 'Enter values to solve';
+
+let calculation = localStorage.getItem('calculation') || blankFormula;
 const calculationOutput = document.querySelector('.js-calculation-output');
 calculationOutput.innerHTML = calculation;
 
@@ -15,6 +17,10 @@ for(let i = 0; i < operatorButtons.length; i++) {
 }
 
 function updateCalculation() {
+
+  if(calculation === blankFormula) {
+    calculation = '';
+  }
   
   calculation += document.activeElement.innerText;
   localStorage.setItem('calculation', calculation);
@@ -28,7 +34,7 @@ document.querySelector('.js-equals-btn').addEventListener('click', function() {
 })
 
 document.querySelector('.js-clear-btn').addEventListener('click', function() {
-  calculation = '';
+  calculation = blankFormula;
   localStorage.removeItem('calculation');
   calculationOutput.innerHTML = calculation;
 })
