@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Arrays and Loops
+    </title>
+    <style>
+    </style>
+  </head>
+  <body>
+    <div class="js-item-count-container">
+
+    </div>
+    <script>
+
+      const words = ['apple', 'grape', 'apple', 'apple', 'mango', 'mango'];
+      
+      //console.log(JSON.parse(countWords(words)));
+
+      for (const [key, value] of Object.entries(JSON.parse(countWords(words)))) {
+          console.log(key, value);
+      }
+
+      let html = '';
+
+      Object.entries(JSON.parse(countWords(words))).forEach(
+          ([key, value]) => 
+          html += `<p><span style="margin-right: 10px">Fruit: ${key}</span>Count: ${value}</p>`
+      );
+
+      document.querySelector('.js-item-count-container').innerHTML = html;
+      
+      function countWords(words) {
+
+        const wordsCount = {};
+
+        for(let i = 0; i < words.length; i++) {
+
+          if(wordsCount[words[i]]) {
+            wordsCount[words[i]] = wordsCount[words[i]] + 1;
+          } else {
+            wordsCount[words[i]] = 1;
+          }
+
+        }
+        
+        return JSON.stringify(wordsCount);
+      }
+
+    </script>
+  </body>
+</html>

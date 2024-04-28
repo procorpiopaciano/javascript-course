@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Arrays and Loops
+    </title>
+    <style>
+    </style>
+  </head>
+  <body>
+    <script>
+      const myArray = [1,2];
+      console.log(minMax(myArray));
+
+      function minMax(nums) {
+        let min = null;
+        let max = null;
+
+        for(let i = 0; i < nums.length; i++) {
+          if(nums[i] >= 0) {
+            if(nums[i] <= min || min === null) {
+              min = nums[i];
+            }
+
+            if(nums[i] >= max || max === null) {
+              max = nums[i];
+            }
+          }
+        }
+
+        /*
+        return {
+          min,
+          max
+        };
+        */
+        
+        return {
+          min: min,
+          max: max
+        };
+
+
+      }
+
+    </script>
+  </body>
+</html>

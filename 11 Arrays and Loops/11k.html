@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Arrays and Loops
+    </title>
+    <style>
+    </style>
+  </head>
+  <body>
+    <script>
+      const myArray = [1,2,3,4,-5,6];
+      console.log(countPositive(myArray));
+
+      function countPositive(array) {
+        let positiveCount = 0;
+        for(let i = 0; i < array.length; i++) {
+          if(array[i] >= 0) {
+            positiveCount++;
+          }
+        }
+
+        return positiveCount;
+      }
+
+    </script>
+  </body>
+</html>
+
+https://youtu.be/SBmSRK3feww?t=33995

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Arrays and Loops
+    </title>
+    <style>
+    </style>
+  </head>
+  <body>
+    <script>
+      const myFirstArray = [1,2,3,4,5,6,7];
+      const mySecondArray = [1,2,3,4,5,6,7,8,9];
+
+      console.log(addArrays(myFirstArray, mySecondArray));
+
+      function addArrays(array1, array2) {
+
+        let maxLength = 0;
+        
+        if(array1.length >= array2.length) {
+          maxLength = array1.length;
+        } else {
+          maxLength = array2.length;
+        }
+
+        const addedArrays = [];
+
+        for(let i = 0; i < maxLength; i++) {
+          addedArrays.push((array1[i] || 0) + (array2[i] || 0));
+        }
+
+        return addedArrays;
+      }
+
+    </script>
+  </body>
+</html>

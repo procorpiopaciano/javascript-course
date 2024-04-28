@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Arrays and Loops
+    </title>
+    <style>
+    </style>
+  </head>
+  <body>
+    <script>
+      const myArray = [1,2,3,4,5,6];
+      console.log(addNum(myArray, 3));
+
+      function addNum(array, num) {
+        for(let i = 0; i < array.length; i++) {
+          array[i] = array[i] + num;
+        }
+
+        return array;
+      }
+
+    </script>
+  </body>
+</html>
