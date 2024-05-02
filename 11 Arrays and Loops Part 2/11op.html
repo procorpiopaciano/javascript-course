@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Arrays and Loops
+    </title>
+    <style>
+    </style>
+  </head>
+  <body>
+    <script>
+
+      console.log(indexOfSearch(['hehehe', 'search', 'qweqwe']));
+
+      function indexOfSearch(array) {
+        for(let i = 0; i <= array.length; i++) {
+
+          if(array[i] === 'search') {
+            return i;
+          }
+
+        }
+        return -1;
+      }
+
+    </script>
+  </body>
+</html>

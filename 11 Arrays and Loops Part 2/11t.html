@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Arrays and Loops
+    </title>
+    <style>
+    </style>
+  </head>
+  <body>
+    <script>
+
+      const myArray = ['egg', 'egg', 'red', 'blue', 'egg', 'jojo', 'egg', 'egg'];
+
+      console.log(removeEgg(myArray));
+
+      function removeEgg(array) {
+
+        const arrayWithoutEgg = [];
+        let eggCount = 0;
+
+        for(let i = array.length - 1; i >= 0; i--) {
+
+          if(array[i] !== 'egg' || eggCount >= 2) {
+            arrayWithoutEgg.push(array[i]);
+          } else if(eggCount < 2) {
+            eggCount++;
+          }
+          
+        }
+
+        return arrayWithoutEgg.reverse();
+
+      }
+
+    </script>
+  </body>
+</html>

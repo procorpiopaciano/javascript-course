@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Arrays and Loops
+    </title>
+    <style>
+    </style>
+  </head>
+  <body>
+    <script>
+
+      const myArray = ['green', 'red', 'blue', 'blue', 'red', 'red', 'red'];
+
+      console.log(unique(myArray));
+
+      function findIndex(array, word) {
+        
+        for(let i = 0; i < array.length; i++) {
+          if(array[i] === word) {
+            return i;
+          }
+        }
+        return -1;
+      }
+
+      function unique(array) {
+
+        const uniqueArray = [];
+
+        for(let i = 0; i < array.length; i++) {
+          if(findIndex(uniqueArray, array[i]) === -1) {
+            uniqueArray.push(array[i]);
+          }
+        }
+
+        return uniqueArray;
+
+      }
+
+    </script>
+  </body>
+</html>
+

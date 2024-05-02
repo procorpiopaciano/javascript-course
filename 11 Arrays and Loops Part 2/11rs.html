@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Arrays and Loops
+    </title>
+    <style>
+    </style>
+  </head>
+  <body>
+    <script>
+
+      const myArray = ['egg', 'egg', 'red', 'blue', 'egg', 'jojo', 'egg', 'egg'];
+
+      console.log(removeEgg(myArray, 'r'));
+      console.log(removeEgg(myArray, 's'));
+
+      function removeEgg(array, r_or_s) {
+
+        const arrayWithoutEgg = [];
+        let eggCount = 0;
+
+        if(r_or_s === 'r') {
+
+          for(let i = 0; i < array.length; i++) {
+
+            if(array[i] !== 'egg') {
+              arrayWithoutEgg.push(array[i]);
+            }
+
+          }
+
+        } else if(r_or_s === 's') {
+          for(let i = 0; i < array.length; i++) {
+
+            if(array[i] !== 'egg' || eggCount >= 2) {
+              arrayWithoutEgg.push(array[i]);
+            } else if(eggCount < 2) {
+              eggCount++;
+            }
+
+          }
+        }
+
+        return arrayWithoutEgg;
+
+      }
+
+    </script>
+  </body>
+</html>
